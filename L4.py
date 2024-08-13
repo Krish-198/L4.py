@@ -1,10 +1,20 @@
 import cv2
 img=cv2.imread("Charizard.png")
 startpoint =(0,100)
-endpoint =(0,0)
+endpoint =(200,200)
 color=(0,229,255)
+font=cv2.FONT_HERSHEY_SCRIPT_SIMPLEX
 thickness=10
-r=cv2.line(img,startpoint,endpoint,color,thickness)
-cv2.imshow("Image",r)
+l=cv2.line(img,startpoint,endpoint,color,thickness)
+cv2.imshow("Image",l)
+cv2.waitKey(0)
+r=cv2.rectangle(img,startpoint,endpoint,color,thickness)
+cv2.imshow("Image R",r)
+cv2.waitKey(0)
+c=cv2.circle(img,startpoint,150,color,thickness)
+cv2.imshow("Image C",c)
+cv2.waitKey(0)
+t=cv2.putText(img,"BLAH",endpoint,font,5,color,thickness,cv2.LINE_AA)
+cv2.imshow("Image T",t)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
